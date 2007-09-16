@@ -1,7 +1,7 @@
 %define	name	slune
 %define	oname	Slune
 %define	version	1.0.12
-%define	rel	3
+%define	rel	4
 %define	release	%mkrel %{rel}
 %define	Summary	A multiplayer 3D racing and car-crashing game in Python
 
@@ -38,19 +38,6 @@ python setup.py install	--root=%{buildroot} \
 			--install-data %{_gamesdatadir} \
 			--no-lang
 
-mkdir -p %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} << EOF
-?package(%name): needs="x11" \
-	section="More Applications/Games/Arcade" \
-	title="Slune" \
-	longtitle="%{Summary}" \
-	command="%{_gamesbindir}/%{name}" \
-	icon="%{name}.png" \
-	startup_notify="true" \
-	xdg="true"
-EOF
-
-
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -60,7 +47,7 @@ Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame
 StartupNotify=true
 Encoding=UTF-8
 EOF
@@ -92,10 +79,13 @@ rm -rf %{buildroot}
 %defattr(644,root,root,755)
 %doc README README.fr AUTHORS CHANGES manual.fr.pdf
 %{_gamesdatadir}/%{name}
-%{_menudir}/%{name}
+%{_gamesdatadir}/*.egg-info
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %defattr(755,root,root,755)
 %{_gamesbindir}/%{name}
+
+
+
