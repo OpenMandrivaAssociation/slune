@@ -12,6 +12,7 @@ Release:	%{release}
 Source0:	%{oname}-%{version}.tar.bz2
 License:	GPL
 Group:		Games/Arcade
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 Requires:	python >= %{pyver} tkinter soya >= 0.12
 Requires:	pyopenal >= 0.1.5 py2play >= 0.1.7 pyvorbis
