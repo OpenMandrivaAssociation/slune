@@ -66,11 +66,15 @@ done
 # remove %lang(en) from slune.lang to ensure english text being installed, as it's required
 perl -pi -e "s#\%lang\(en\) ##g" slune.lang
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %{buildroot}
