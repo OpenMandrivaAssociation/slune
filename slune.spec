@@ -1,6 +1,6 @@
 %define	name	slune
 %define	oname	Slune
-%define	version	1.0.13
+%define	version	1.0.15
 %define	rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	A multiplayer 3D racing and car-crashing game in Python
@@ -14,7 +14,7 @@ License:	GPL
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
-Requires:	python >= %{pyver} tkinter soya >= 0.12
+Requires:	python >= %{pyver} tkinter soya >= 0.14
 Requires:	pyopenal >= 0.1.5 py2play >= 0.1.7 pyvorbis
 BuildRequires:	python-devel
 Url:		http://home.gna.org/oomadness/en/slune/index.html
@@ -26,6 +26,9 @@ Includes a multiplayer mode.
 
 %prep
 %setup -q -n %{oname}-%{version}
+
+#(eandry) pt .mo file is not provided in 1.0.15 because of empty .po (check if still valid with new versions)
+rm -rf locale/pt
 
 %build
 python setup.py build
