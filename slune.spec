@@ -1,7 +1,7 @@
 %define	name	slune
 %define	oname	Slune
 %define	version	1.0.15
-%define	rel	3
+%define	rel	4
 %define	release	%mkrel %{rel}
 %define	Summary	A multiplayer 3D racing and car-crashing game in Python
 
@@ -50,9 +50,8 @@ Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Game;ArcadeGame
+Categories=Game;ArcadeGame;
 StartupNotify=true
-Encoding=UTF-8
 EOF
 
 install -m644 ./images/slune.16.png -D %{buildroot}%{_miconsdir}/%{name}.png
