@@ -1,7 +1,7 @@
 %define	name	slune
 %define	oname	Slune
 %define	version	1.0.15
-%define	rel	4
+%define	rel	5
 %define	release	%mkrel %{rel}
 %define	Summary	A multiplayer 3D racing and car-crashing game in Python
 
