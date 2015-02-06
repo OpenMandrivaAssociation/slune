@@ -3,7 +3,7 @@
 Name:		slune
 Summary:	Summary	A multiplayer 3D racing and car-crashing game in Python
 Version:	1.0.15
-Release:	6
+Release:	7
 Source0:	%{oname}-%{version}.tar.bz2
 License:	GPL
 Group:		Games/Arcade
