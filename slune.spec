@@ -11,7 +11,7 @@ BuildArch:	noarch
 Requires:	python >= %{py_ver} tkinter soya >= 0.14
 Requires:	pyopenal >= 0.1.5 py2play >= 0.1.7 pyvorbis
 BuildRequires:	python-devel
-Url:		http://home.gna.org/oomadness/en/slune/index.html
+Url:		https://home.gna.org/oomadness/en/slune/index.html
 
 %description
 A 3D racing and car-crashing game in Python, with multiplayer mode.
